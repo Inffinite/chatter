@@ -92,6 +92,7 @@
         background-color: transparent;
         border: none;
         font-size: 16px;
+        font-family: 'sfr';
         width: 98%;
         color: rgb(52, 52, 52);
     }
@@ -231,6 +232,7 @@
         outline: none;
         background-color: transparent;
         border: none;
+        font-family: 'sfr';
         font-size: 16px;
         width: 98%;
         color: rgb(52, 52, 52);
@@ -284,6 +286,7 @@
     
     ::placeholder {
         color: rgb(182, 182, 182);
+        font-family: 'sfr';
     }
 }
 
@@ -371,6 +374,7 @@
         outline: none;
         background-color: transparent;
         border: none;
+        font-family: 'sfr';
         font-size: 16px;
         width: 98%;
         color: rgb(52, 52, 52);

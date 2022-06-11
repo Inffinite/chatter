@@ -15,10 +15,6 @@ const yname = ref(false)
 const me = ref(localStorage.getItem('username'))
 const allmessages = ref('allmessages')
 
-function sendText(){
-    console.log(message.value)
-}
-
 function addName(){
     localStorage.setItem("username", me.value)
     yname.value = false 
@@ -83,8 +79,7 @@ onMounted(() => {
     if(!m){
         yname.value = true
         socket.on("chat", (data) => {
-            var audio = new Audio('https://github.com/Inffinite/chatter/blob/main/src/assets/new.mpeg?raw=true')
-            audio.play()
+            soundEffects('https://github.com/Inffinite/chatter/blob/main/src/assets/new.mpeg?raw=true')
             console.log(data)
             store.addMessage({ username: data.username, message: data.message, date: data.date })
         })
