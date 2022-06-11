@@ -141,7 +141,7 @@ onMounted(() => {
             </div>
         </div>
         <div class="text-inp">
-            <input @keyup.enter="addText()" v-model="message" type="text" placeholder="Press Enter to send" class="chat-text">
+            <input @keyup.enter="addText()" v-model="message" type="text" placeholder="Press Enter to send" class="chat-text" autofocus>
         </div>
     </div>
   </div>
