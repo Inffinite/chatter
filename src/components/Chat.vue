@@ -11,10 +11,17 @@ const store = useChatStore()
 const { messages, myname } = storeToRefs(useChatStore())
 
 const message = ref('')
+const yname = ref(false)
+const me = ref(localStorage.getItem('username'))
 const allmessages = ref('allmessages')
 
 function sendText(){
     console.log(message.value)
+}
+
+function addName(){
+    localStorage.setItem("username", me.value)
+    yname.value = false 
 }
 
 function scrollToBottom(){
@@ -23,23 +30,46 @@ function scrollToBottom(){
 }
 
 function addText(){
-    socket.emit("chat", { username: myname, message: message.value, date: new Date() })
-    store.addMessage({ username: myname, message: message.value, date: new Date() })
-    message.value = ""
+    if(message.value.length <= 0){
+        console.log('')
+    } else {
+        socket.emit("chat", { username: me.value, message: message.value, date: new Date() })
+        store.addMessage({ username: me.value, message: message.value, date: new Date() })
+        message.value = ""
+    }
 }
 
 onMounted(() => {
-    socket.on("chat", (data) => {
-        var audio = new Audio('http://localhost:8000/new.mpeg')
-        audio.play()
-        console.log(data.username._object.myname)
-        store.addMessage({ username: data.username._object.myname, message: data.message, date: data.date })
-    })
+    const m = localStorage.getItem('username')
+    if(!m){
+        yname.value = true
+        socket.on("chat", (data) => {
+            var audio = new Audio('http://localhost:8000/new.mpeg')
+            audio.play()
+            console.log(data)
+            store.addMessage({ username: data.username, message: data.message, date: data.date })
+        })
+    } else {
+        socket.on("chat", (data) => {
+            var audio = new Audio('http://localhost:8000/new.mpeg')
+            audio.play()
+            console.log(data)
+            store.addMessage({ username: data.username, message: data.message, date: data.date })
+        })
+    }
 })
 </script>
 
 <template>
   <div class="chat">
+    <div v-if="yname" class="y-name-wr">
+        <div class="y-name">
+            <div class="qst">Whats your name?</div>
+            <div class="y-q">
+                <input @keyup.enter="addName()" v-model="me" type="text" placeholder="Someone" class="y-ans">
+            </div>
+        </div>
+    </div>
     <div class="main-card">
         <!-- Chatty -->
         <div ref="allmessages" id="all-chats" class="all-chats">
@@ -54,7 +84,7 @@ onMounted(() => {
             </div>
         </div>
         <div class="text-inp">
-            <input @keyup.enter="addText()" v-model="message" type="text" placeholder="Say something" class="chat-text">
+            <input @keyup.enter="addText()" v-model="message" type="text" placeholder="Press Enter to send" class="chat-text">
         </div>
     </div>
   </div>
