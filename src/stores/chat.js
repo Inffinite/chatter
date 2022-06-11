@@ -6,8 +6,8 @@ export const useChatStore = defineStore({
     myname: "Lewis",
     messages: [
         {
-            username: "Billy",
-            message: "I really love cyber security.",
+            username: "Anonymous",
+            message: "/clear erases all messages",
             date: new Date()
         }
     ]
