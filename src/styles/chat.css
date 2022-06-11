@@ -86,6 +86,11 @@
         justify-content: space-between;
         align-items: center;
     }
+
+    .iconS {
+        fill: rgba(0, 189, 126, 0.908);
+        height: 20px;
+    }
     
     .chat-text {
         outline: none;
@@ -93,7 +98,7 @@
         border: none;
         font-size: 16px;
         font-family: 'sfr';
-        width: 98%;
+        width: 95%;
         color: rgb(52, 52, 52);
     }
     
