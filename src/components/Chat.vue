@@ -57,6 +57,12 @@ function addText(){
             message.value = ""
             break;
 
+        case "/zeze":
+            socket.emit("chat", { message: "/zeze" })
+            soundEffects('https://github.com/Inffinite/chatter/blob/main/src/assets/zeze.mpeg?raw=true')
+            message.value = ""
+            break;
+
         case "/minionHello":
             socket.emit("chat", { message: "/minionHello" })
             soundEffects('https://github.com/Inffinite/chatter/blob/main/src/assets/minionHello.mpeg?raw=true')
@@ -107,6 +113,10 @@ onMounted(() => {
             switch (data.message) {
                 case '/minionLaugh':
                     soundEffects('https://github.com/Inffinite/chatter/blob/main/src/assets/minionLaugh.mpeg?raw=true')
+                    break;
+
+                case '/zeze':
+                    soundEffects('https://github.com/Inffinite/chatter/blob/main/src/assets/zeze.mpeg?raw=true')
                     break;
 
                 case '/minionHello':
