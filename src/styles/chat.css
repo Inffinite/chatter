@@ -1,0 +1,94 @@
+.chat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: hsla(160, 100%, 37%, 1);
+}
+
+.main-card {
+    background-color: white;
+    border-radius: 15px;
+    width: 500px;
+    position: relative;
+    padding: 10px;
+    height: 500px;
+}
+
+.text-inp {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(240, 240, 240);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-text {
+    outline: none;
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    width: 98%;
+    color: rgb(22, 22, 22);
+}
+
+.all-chats {
+    width: 100%;
+    height: 88%;
+    /* background-color: blue; */
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 10px;
+    text-align: start;
+    scrollbar-track-color: white;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: hsla(160, 100%, 37%, 1);
+    border-radius: 50px;
+}
+
+.message {
+    color: hsla(160, 100%, 37%, 1);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.chatmessage {
+    color: rgb(108, 108, 108);
+    margin-top: 5px;
+}
+
+.timestamp {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+    color: rgb(136, 136, 136);
+    margin-top: 5px;
+}
+
+::placeholder {
+    color: rgb(160, 160, 160);
+}
