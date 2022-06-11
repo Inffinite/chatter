@@ -48,14 +48,14 @@ onMounted(() => {
     if(!m){
         yname.value = true
         socket.on("chat", (data) => {
-            var audio = new Audio('http://localhost:8000/new.mpeg')
+            var audio = new Audio('https://github.com/Inffinite/chatter/blob/main/src/assets/new.mpeg')
             audio.play()
             console.log(data)
             store.addMessage({ username: data.username, message: data.message, date: data.date })
         })
     } else {
         socket.on("chat", (data) => {
-            var audio = new Audio('http://localhost:8000/new.mpeg')
+            var audio = new Audio('https://github.com/Inffinite/chatter/blob/main/src/assets/new.mpeg')
             audio.play()
             console.log(data)
             store.addMessage({ username: data.username, message: data.message, date: data.date })
