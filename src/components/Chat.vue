@@ -24,10 +24,21 @@ function addName(){
     yname.value = false 
 }
 
+function soundEffects(sound){
+    var audio = new Audio(sound)
+    audio.play()
+}
+
 function addText(){
     switch (message.value) {
         case "/clear":
             store.clearMessages()
+            message.value = ""
+            break;
+
+        case "/minionLaugh":
+            socket.emit("chat", "/minionLaugh")
+            soundEffects('https://github.com/Inffinite/chatter/blob/main/src/assets/minionLaugh.mpeg?raw=true')
             message.value = ""
             break;
 
@@ -39,7 +50,7 @@ function addText(){
     
         default:
             if(message.value.length <= 0){
-                console.log('')
+                console.log('[---------]')
             } else {
                 socket.emit("chat", { username: me.value, message: message.value, date: new Date() })
                 store.addMessage({ username: me.value, message: message.value, date: new Date() })
@@ -61,10 +72,18 @@ onMounted(() => {
         })
     } else {
         socket.on("chat", (data) => {
-            var audio = new Audio('https://github.com/Inffinite/chatter/blob/main/src/assets/new.mpeg?raw=true')
-            audio.play()
-            console.log(data)
-            store.addMessage({ username: data.username, message: data.message, date: data.date })
+            switch (data.message) {
+                case '/minionLaugh':
+                    soundEffects('https://github.com/Inffinite/chatter/blob/main/src/assets/minionLaugh.mpeg?raw=true')
+                    break;
+            
+                default:
+                    var audio = new Audio('https://github.com/Inffinite/chatter/blob/main/src/assets/new.mpeg?raw=true')
+                    audio.play()
+                    console.log(data)
+                    store.addMessage({ username: data.username, message: data.message, date: data.date })
+                    break;
+            }
         })
     }
 })
