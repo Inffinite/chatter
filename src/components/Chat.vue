@@ -37,7 +37,7 @@ function addText(){
             break;
 
         case "/minionLaugh":
-            socket.emit("chat", "/minionLaugh")
+            socket.emit("chat", { message: "/minionLaugh" })
             soundEffects('https://github.com/Inffinite/chatter/blob/main/src/assets/minionLaugh.mpeg?raw=true')
             message.value = ""
             break;
