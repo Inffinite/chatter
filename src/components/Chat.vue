@@ -86,7 +86,7 @@ onMounted(() => {
                     {{ mymessage.message }}
                 </div>
                 <div class="timestamp">
-                    {{ moment(mymessage.date).format("Do MMM h:mm a") }}
+                    {{ moment(mymessage.date).format("MMM h:mm a") }}
                 </div>
             </div>
         </div>
