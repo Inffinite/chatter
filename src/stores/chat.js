@@ -26,11 +26,11 @@ export const useChatStore = defineStore({
         effect: "Show this list of commands"
       },
     ],
-    commandsPageState: true,
+    commandsPageState: false,
     messages: [
         {
             username: "Anonymous",
-            message: "/clear erases all messages",
+            message: "/commands to view all commands",
             date: new Date()
         }
     ]
