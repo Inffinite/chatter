@@ -145,6 +145,7 @@
     
     ::placeholder {
         color: rgb(182, 182, 182);
+        font-family: 'sfr';
     }
 }
 
@@ -428,6 +429,7 @@
     
     ::placeholder {
         color: rgb(182, 182, 182);
+        font-family: 'sfr';
     }
 }
 
