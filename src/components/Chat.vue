@@ -169,6 +169,9 @@ onMounted(() => {
             <div class="y-q">
                 <input @keyup.enter="addName()" v-model="me" type="text" placeholder="Someone" class="y-ans">
             </div>
+            <div @click="addName" class="c-close">
+                Continue
+            </div>
         </div>
     </div>
     <!-- name component -->
