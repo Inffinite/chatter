@@ -1,0 +1,113 @@
+@import './fonts.css';
+
+@media only screen {
+    .commands {
+        border-radius: 10px;
+        background-color: white;
+        padding: 20px;
+        width: 450px;
+        margin: 0px 20px;
+    }
+    
+    .command {
+        margin-top: 10px;
+        font-size: 18px;
+        font-family: 'sfr';
+        color: rgb(52, 52, 52);
+    }
+    
+    .cmd {
+        border-radius: 2px;
+        font-family: 'coco';
+        font-size: 18px;
+        color: rgb(52, 52, 52);
+    }
+    
+    .c-close {
+        width: 100%;
+        cursor: pointer;
+        border-radius: 5px;
+        margin-top: 20px;
+        font-family: 'sfb';
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: hsla(160, 100%, 37%, 1);
+        padding: 8px 0px;
+    }    
+}
+
+@media only screen and (min-width: 40.063em) {
+    .commands {
+        border-radius: 10px;
+        background-color: white;
+        padding: 20px;
+        width: 450px;
+    }
+    
+    .command {
+        margin-top: 10px;
+        font-size: 18px;
+        font-family: 'sfr';
+        color: rgb(52, 52, 52);
+    }
+    
+    .cmd {
+        border-radius: 2px;
+        font-family: 'coco';
+        font-size: 18px;
+        color: rgb(52, 52, 52);
+    }
+    
+    .c-close {
+        width: 100%;
+        cursor: pointer;
+        border-radius: 5px;
+        margin-top: 20px;
+        font-family: 'sfb';
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: hsla(160, 100%, 37%, 1);
+        padding: 8px 0px;
+    }   
+}
+
+@media only screen and (min-width: 64.063em) {
+    .commands {
+        border-radius: 10px;
+        background-color: white;
+        padding: 20px;
+        width: 450px;
+    }
+    
+    .command {
+        margin-top: 10px;
+        font-size: 18px;
+        font-family: 'sfr';
+        color: rgb(52, 52, 52);
+    }
+    
+    .cmd {
+        border-radius: 2px;
+        font-family: 'coco';
+        font-size: 18px;
+        color: rgb(52, 52, 52);
+    }
+    
+    .c-close {
+        width: 100%;
+        cursor: pointer;
+        border-radius: 5px;
+        margin-top: 20px;
+        font-family: 'sfb';
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: hsla(160, 100%, 37%, 1);
+        padding: 8px 0px;
+    }   
+}

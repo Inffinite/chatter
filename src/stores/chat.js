@@ -4,6 +4,29 @@ export const useChatStore = defineStore({
   id: 'chat',
   state: () => ({
     myname: "Lewis",
+    commands: [
+      {
+        command: '/ohno',
+        effect: "ohno sound effect"
+      },
+      {
+        command: '/minionLaugh',
+        effect: "Launging minion sound effect"
+      },
+      {
+        command: '/minionHello',
+        effect: "Minion saying hello"
+      },
+      {
+        command: '/whips',
+        effect: "Whips sound effect"
+      },
+      {
+        command: '/commands',
+        effect: "Show this list of commands"
+      },
+    ],
+    commandsPageState: true,
     messages: [
         {
             username: "Anonymous",
@@ -19,6 +42,10 @@ export const useChatStore = defineStore({
   actions: {
     addMessage(message) {
       this.messages.unshift(message)
+    },
+
+    changeCommandsPageState(state){
+      this.commandsPageState = state
     },
 
     clearMessages(){

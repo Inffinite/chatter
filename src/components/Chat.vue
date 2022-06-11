@@ -8,7 +8,12 @@ const socket = io("https://chatt6969.herokuapp.com")
 
 const store = useChatStore()
 
-const { messages, myname } = storeToRefs(useChatStore())
+const { 
+    messages, 
+    myname, 
+    commands,
+    commandsPageState
+} = storeToRefs(useChatStore())
 
 const message = ref('')
 const yname = ref(false)
@@ -18,6 +23,16 @@ const allmessages = ref('allmessages')
 function addName(){
     localStorage.setItem("username", me.value)
     yname.value = false 
+}
+
+function commandsPage(){
+    console.log(commandsPageState.value)
+    store.changeCommandsPageState(true)
+}
+
+function commandsPageClose(){
+    console.log(commandsPageState.value)
+    store.changeCommandsPageState(false)
 }
 
 function soundEffects(sound){
@@ -30,6 +45,10 @@ function addText(){
         case "/clear":
             store.clearMessages()
             message.value = ""
+            break;
+
+        case '/commands':
+            commandsPage()
             break;
 
         case "/minionLaugh":
@@ -116,6 +135,23 @@ onMounted(() => {
 
 <template>
   <div class="chat">
+    <!-- commands -->
+    <div v-if="commandsPageState" class="y-name-wr">
+        <div class="commands">
+            <div class="qst">
+                Commands
+            </div>
+            <div v-for="command in commands" :key="command.command" class="command">
+                <span class="cmd">{{ command.command }}  </span>
+                - {{ command.effect }}
+            </div>
+            <div @click="commandsPageClose" class="c-close">
+                Close
+            </div>
+        </div>
+    </div>
+    <!-- commands -->
+
     <!-- name component -->
     <div v-if="yname" class="y-name-wr">
         <div class="y-name">
@@ -149,4 +185,5 @@ onMounted(() => {
 
 <style scoped>
 @import '../styles/chat.css';
+@import '../styles/commands.css';
 </style>
