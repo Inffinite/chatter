@@ -19,6 +19,10 @@ export const useChatStore = defineStore({
   actions: {
     addMessage(message) {
       this.messages.unshift(message)
+    },
+
+    clearMessages(){
+      this.messages = []
     }
   }
 })

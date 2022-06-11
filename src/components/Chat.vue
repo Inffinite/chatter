@@ -4,7 +4,7 @@ import { storeToRefs } from 'pinia'
 import { useChatStore } from '../stores/chat'
 import moment from 'moment'
 import { io } from "socket.io-client"
-const socket = io("ws://localhost:4444")
+const socket = io("https://chatt6969.herokuapp.com")
 
 const store = useChatStore()
 
@@ -24,18 +24,22 @@ function addName(){
     yname.value = false 
 }
 
-function scrollToBottom(){
-    var elem = document.getElementById('all-chats')
-    elem.scroll({ top: elem.scrollHeight, behavior: "smooth" })
-}
-
 function addText(){
-    if(message.value.length <= 0){
-        console.log('')
-    } else {
-        socket.emit("chat", { username: me.value, message: message.value, date: new Date() })
-        store.addMessage({ username: me.value, message: message.value, date: new Date() })
-        message.value = ""
+    switch (message.value) {
+        case "/clear":
+            store.clearMessages()
+            message.value = ""
+            break;
+    
+        default:
+            if(message.value.length <= 0){
+                console.log('')
+            } else {
+                socket.emit("chat", { username: me.value, message: message.value, date: new Date() })
+                store.addMessage({ username: me.value, message: message.value, date: new Date() })
+                message.value = ""
+            }
+            break;
     }
 }
 
@@ -62,6 +66,7 @@ onMounted(() => {
 
 <template>
   <div class="chat">
+    <!-- name component -->
     <div v-if="yname" class="y-name-wr">
         <div class="y-name">
             <div class="qst">Whats your name?</div>
@@ -70,6 +75,8 @@ onMounted(() => {
             </div>
         </div>
     </div>
+    <!-- name component -->
+
     <div class="main-card">
         <!-- Chatty -->
         <div ref="allmessages" id="all-chats" class="all-chats">

@@ -24,7 +24,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 189, 126, 0.908);
+    background-color: #00bd7ee8;
 }
 
 .y-name {
@@ -82,7 +82,7 @@
     border: none;
     font-size: 16px;
     width: 98%;
-    color: rgb(22, 22, 22);
+    color: rgb(52, 52, 52);
 }
 
 .all-chats {
@@ -121,7 +121,7 @@
 
 .chatmessage {
     color: rgb(108, 108, 108);
-    margin-top: 5px;
+    margin-top: 0px;
 }
 
 .timestamp {
