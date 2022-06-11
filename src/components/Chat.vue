@@ -30,6 +30,12 @@ function addText(){
             store.clearMessages()
             message.value = ""
             break;
+
+        case "/changename":
+            yname.value = true
+            me.value = ""
+            message.value = ""
+            break;
     
         default:
             if(message.value.length <= 0){
