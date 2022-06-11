@@ -42,6 +42,24 @@ function addText(){
             message.value = ""
             break;
 
+        case "/minionHello":
+            socket.emit("chat", { message: "/minionHello" })
+            soundEffects('https://github.com/Inffinite/chatter/blob/main/src/assets/minionHello.mpeg?raw=true')
+            message.value = ""
+            break;
+
+        case "/ohno":
+            socket.emit("chat", { message: "/ohno" })
+            soundEffects('https://github.com/Inffinite/chatter/blob/main/src/assets/ohno.mpeg?raw=true')
+            message.value = ""
+            break;
+
+        case "/whips":
+            socket.emit("chat", { message: "/whips" })
+            soundEffects('https://github.com/Inffinite/chatter/blob/main/src/assets/whips.mpeg?raw=true')
+            message.value = ""
+            break;
+
         case "/changename":
             yname.value = true
             me.value = ""
@@ -75,6 +93,18 @@ onMounted(() => {
             switch (data.message) {
                 case '/minionLaugh':
                     soundEffects('https://github.com/Inffinite/chatter/blob/main/src/assets/minionLaugh.mpeg?raw=true')
+                    break;
+
+                case '/minionHello':
+                    soundEffects('https://github.com/Inffinite/chatter/blob/main/src/assets/minionHello.mpeg?raw=true')
+                    break;
+
+                case '/ohno':
+                    soundEffects('https://github.com/Inffinite/chatter/blob/main/src/assets/ohno.mpeg?raw=true')
+                    break;
+
+                case '/whips':
+                    soundEffects('https://github.com/Inffinite/chatter/blob/main/src/assets/whips.mpeg?raw=true')
                     break;
             
                 default:
