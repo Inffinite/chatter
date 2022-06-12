@@ -146,11 +146,22 @@
         font-size: 14px;
         color: rgb(199, 199, 199);
         margin-top: 5px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 20px;
     }
     
     ::placeholder {
         color: rgb(182, 182, 182);
         font-family: 'sfr';
+    }
+
+    .all {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
     }
 }
 
