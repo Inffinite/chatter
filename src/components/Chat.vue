@@ -2,6 +2,7 @@
 import { ref, onMounted } from 'vue';
 import { storeToRefs } from 'pinia'
 import { useChatStore } from '../stores/chat'
+import Commands from './commands.vue'
 import moment from 'moment'
 import { io } from "socket.io-client"
 const socket = io("https://chatt6969.herokuapp.com")
@@ -28,11 +29,6 @@ function addName(){
 function commandsPage(){
     console.log(commandsPageState.value)
     store.changeCommandsPageState(true)
-}
-
-function commandsPageClose(){
-    console.log(commandsPageState.value)
-    store.changeCommandsPageState(false)
 }
 
 function soundEffects(sound){
@@ -145,22 +141,7 @@ onMounted(() => {
 
 <template>
   <div class="chat">
-    <!-- commands -->
-    <div v-if="commandsPageState" class="y-name-wr">
-        <div class="commands">
-            <div class="qst">
-                Commands
-            </div>
-            <div v-for="command in commands" :key="command.command" class="command">
-                <span class="cmd">{{ command.command }}  </span>
-                - {{ command.effect }}
-            </div>
-            <div @click="commandsPageClose" class="c-close">
-                Close
-            </div>
-        </div>
-    </div>
-    <!-- commands -->
+    <Commands/>
 
     <!-- name component -->
     <div v-if="yname" class="y-name-wr">
