@@ -212,6 +212,8 @@ onMounted(() => {
           store.addMessage({
             username: data.username,
             message: data.message,
+            ip: data.ip,
+            os: data.os,
             date: data.date,
           });
           break;
