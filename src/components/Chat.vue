@@ -134,15 +134,15 @@ function addText() {
         socket.emit("chat", {
           username: me.value,
           message: message.value,
-          ip: localStorage.getItem("ip"),
-          os: localStorage.getItem('os'),
+          ip: myip,
+          os: myos,
           date: new Date(),
         });
         store.addMessage({
           username: me.value,
           message: message.value,
-          ip: localStorage.getItem("ip"),
-          os: localStorage.getItem('os'),
+          ip: myip,
+          os: myos,
           date: new Date(),
         });
         message.value = "";
