@@ -134,15 +134,15 @@ function addText() {
         socket.emit("chat", {
           username: me.value,
           message: message.value,
-          ip: myip.value,
-          os: myos.value,
+          // ip: myip.value,
+          // os: myos.value,
           date: new Date(),
         });
         store.addMessage({
           username: me.value,
           message: message.value,
-          ip: myip.value,
-          os: myos.value,
+          // ip: myip.value,
+          // os: myos.value,
           date: new Date(),
         });
         message.value = "";
@@ -165,8 +165,8 @@ onMounted(() => {
       store.addMessage({
         username: data.username,
         message: data.message,
-        ip: data.ip,
-        os: data.os,
+        // ip: data.ip,
+        // os: data.os,
         date: data.date,
       });
     });
@@ -212,8 +212,8 @@ onMounted(() => {
           store.addMessage({
             username: data.username,
             message: data.message,
-            ip: data.ip,
-            os: data.os,
+            // ip: data.ip,
+            // os: data.os,
             date: data.date,
           });
           break;
