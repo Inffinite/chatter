@@ -6,7 +6,7 @@ import Commands from "./commands.vue";
 import axios from "axios";
 import moment from "moment";
 import { io } from "socket.io-client";
-const socket = io("https://chatt6969.herokuapp.com");
+const socket = io("https://chatter-server.onrender.com");
 
 const store = useChatStore();
 
